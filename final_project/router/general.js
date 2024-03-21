@@ -33,7 +33,7 @@ public_users.get('/', function (req, res) {
 // Get the book list available in the shop using ASYNC/AWAIT with Axios
 public_users.get('/async', async function (req, res) {
   try {
-    const response = await axios.get("http://localhost:5002/");
+    const response = await axios.get("http://localhost:5000/");
     const books = response.data;
     res.status(200).json(books);
   } catch (error) {
@@ -49,7 +49,7 @@ public_users.get('/isbn/:isbn', function (req, res) {
 // Get book details based on ISBN using ASYNC/AWAIT with Axios
 public_users.get('/async/isbn/:isbn', async function (req, res) {
   try {
-    const response = await axios.get("http://localhost:5002/isbn/" + req.params.isbn);
+    const response = await axios.get("http://localhost:5000/isbn/" + req.params.isbn);
     const books = response.data;
     res.status(200).json(books);
   } catch (error) {
@@ -69,7 +69,7 @@ public_users.get('/author/:author', function (req, res) {
 // Get book details based on author using ASYNC/AWAIT with Axios
 public_users.get('/async/author/:author', async function (req, res) {
   try {
-    const response = await axios.get("http://localhost:5002/author/" + req.params.author);
+    const response = await axios.get("http://localhost:5000/author/" + req.params.author);
     const data = response.data;
     res.status(200).json(data);
   } catch (error) {
@@ -89,7 +89,7 @@ public_users.get('/title/:title', function (req, res) {
 // Get all books based on title using ASYNC/AWAIT with Axios
 public_users.get('/async/title/:title', async function (req, res) {
   try {
-    const response = await axios.get("http://localhost:5002/title/" + req.params.title);
+    const response = await axios.get("http://localhost:5000/title/" + req.params.title);
     const data = response.data;
     res.status(200).json(data);
   } catch (error) {
